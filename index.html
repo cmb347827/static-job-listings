@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/yxgKFKLM/favicon-32x32.png">
+  
+  <link rel='stylesheet' href='static-job-listings-master.css' type='text/css'>
+  
+  <title>Frontend Mentor | Job Listings</title>
+  
+ 
+</head>
+<body>
+    
+    <div class="outer display-flex direction-column ">
+         <div class='svg-banner-outer'> 
+            <svg  class='banner desktop svg-100' viewBox='0 0 1440 156' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h1440v156H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use xlink:href="#a"/><g mask="url(#b)" fill="#63BABA"><path d="M495.73 563.419c-51.439-48.795-53.583-130.05-4.788-181.489a128.377 128.377 0 0 1 4.789-4.789l418.16-396.66c55.045-52.215 141.329-52.215 196.374 0 50.418 47.825 53.478 126.835 7.634 178.39l188.06-178.39c55.045-52.215 141.328-52.215 196.373 0 51.44 48.794 53.583 130.049 4.789 181.488a128.377 128.377 0 0 1-4.789 4.789l-418.158 396.658c-55.045 52.215-141.329 52.215-196.374 0-50.418-47.825-53.478-126.835-7.634-178.39L692.104 563.42c-55.045 52.215-141.328 52.215-196.373 0ZM360.464 45.523c-51.44-48.794-53.583-130.05-4.789-181.488a128.377 128.377 0 0 1 4.789-4.79l418.163-396.663c55.046-52.215 141.33-52.215 196.374 0 51.44 48.794 53.583 130.05 4.789 181.488a128.376 128.376 0 0 1-4.789 4.79L556.837 45.522c-55.045 52.215-141.328 52.215-196.373 0Zm-468.795 71.832c-51.439-48.795-53.583-130.05-4.789-181.489a128.377 128.377 0 0 1 4.79-4.788l418.16-396.661c55.045-52.215 141.328-52.215 196.373 0 51.44 48.794 53.583 130.05 4.79 181.488a128.378 128.378 0 0 1-4.79 4.789l-418.16 396.66c-55.045 52.216-141.329 52.216-196.374 0Z"/></g></g></svg>
+            <svg  class='banner mobile svg-100' xmlns="http://www.w3.org/2000/svg" viewBox='0 0 375 156'><g fill="#5CA5A5"><path fill="#63BABA" fill-rule="evenodd" d="M-86.732 487.429c-51.432-51.425-51.438-134.806-.013-186.237l.013-.013L309.926-95.424c51.441-51.434 134.836-51.434 186.277 0C547.634-44 547.64 39.38 496.216 90.813c-.005.004-.01.008-.013.013L99.543 487.429c-51.44 51.433-134.834 51.433-186.275 0zm-444.692 71.824c-51.432-51.424-51.438-134.806-.013-186.237l.013-.013L-134.766-23.6C-83.325-75.034.07-75.034 51.511-23.6c51.431 51.424 51.437 134.805.013 186.237l-.013.013-396.66 396.603c-51.44 51.433-134.834 51.433-186.275 0z"/></g></svg>
+         </div>
+        
+        <header  title="Returned job listings" class='display-flex align-items-center visuallyhidden border'>
+              <h2 class="visually-hidden">Applied filters</h2>
+              <div  class="filters display-flex wrap  align-items-center"></div>
+        </header>
+        
+        <main>
+              <h1 class="visually-hidden">Either filtered results , all job-listings or no results</h1>
+              <div title='all job listings' class="js-job-listings">
+                  <h2 class="visually-hidden">Job Listings</h2>
+                  
+                  
+              </div>
+              
+              
+              <div title='filtered results' class="js-results">
+                  <h3 class="visually-hidden">Filtered results</h3>
+                  <span title="No results" id="no-results">
+                    <!-- no results content -->
+                    No results to show
+                  </span>
+                 
+                  
+             </div>
+             
+            
+        </main>
+        <footer>
+          <div class="attribution text-center mt-5">
+              <span class='me-2'>Challenge by</span><address><a class='me-2' href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a></address>
+              <span class='me-2'>Coded by</span><address><a href="https://www.frontendmentor.io/profile/cmb347827">CMB</a></address>
+            </div>
+        </footer>
+    </div>
+      <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous"></script>
+      
+      <script async src="static-job-listings-master.js"></script>
+      <noscript>This site requires JavaScript to function properly, Your browser does not support JavaScript!</noscript>
+</body>
+</html>

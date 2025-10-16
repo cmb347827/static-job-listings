@@ -1,0 +1,249 @@
+
+@use './global/fonts' as fnt;
+@use './global/flexgrid';
+
+
+$colors: (
+  Light Grayish Cyan : hsl(180, 52%, 96%),
+  Light Grayish Cyan2 : hsl(180, 31%, 95%),
+  Dark Grayish Cyan: hsl(180, 8%, 52%),
+  Very Dark Grayish Cyan: hsl(180, 14%, 20%),
+  Desaturated Dark Cyan: hsl(180, 29%, 50%),
+);
+$fallback-color: (
+  PaleTurquoise,PaleTurquoise2, Crystal,PaleTurquoise4,DarkCyan
+);
+
+@mixin font-color($color, $fallback-color) {
+  color: $fallback-color;
+  color: $color;
+}
+
+@mixin bg-color($color, $fallback-color) {
+  background-color: $fallback-color;
+  background-color: $color;
+}
+
+
+@mixin border-radius($radius...) {
+  border-radius: $radius;
+}
+@mixin margin($args...) {
+  margin: $args;
+}
+@mixin padding($args...) {
+  padding: $args;
+}
+
+
+html{
+  box-sizing: border-box; 
+}
+img,svg {
+      vertical-align: middle
+  }
+
+button,select {
+    text-transform: none
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.top-z-index{
+  //needed for z-index.
+  position: relative;
+  z-index: 1;
+  opacity:1;
+}
+.svg-logo-outer{
+    position:relative;
+    top: -2em;
+    max-width:10%;
+    max-height:10%;
+    @media screen and (min-width:768px){
+      max-width: 30%;
+      max-height: 30%;
+      top:0;
+    }
+}
+.svg-banner-outer{
+   max-width:100%;
+   max-height: 100%;
+   background-color: hsl(180, 29%, 50%);
+}
+.svg-100{
+  width:100%;
+  height:100%;
+}
+.noborder{
+  border:none;
+}
+.mobile{
+   display:block;
+   @media screen and(min-width:768px){
+     display:none;
+   }
+}
+.desktop{
+  display:block;
+  @media screen and(max-width:767px){
+    display:none;
+  }
+}
+.filtersPosition{
+    position:relative;
+    top:-2.5em;
+}
+ 
+.rounded-pill{
+    border-radius: 15px;
+}
+.text-white{
+    color: white;
+}
+.p-03{
+    padding:0.3em;
+}
+.mobile-move-up{
+     position:relative;
+     top:-2em;
+     
+}
+.center{
+     display:block;
+     margin:0 auto;
+}
+
+.outer{
+      output{
+         display:block;
+      }
+       main{
+        min-height: 135em;
+      }
+      
+      @include bg-color(lighten(map-get($colors,Light Grayish Cyan),2),nth($fallback-color,1));
+      @font-face {
+        font-family: "League Spartan]";
+        src: url("C:/Users/Melissa/Desktop/github/intermediate/static-job-listings-master/fonts/LeagueSpartan-VariableFont_wght.ttf");
+      } 
+      .banner{
+          height: fit-content;
+      }
+      @font-face {
+        font-size: 15px;
+        font-weight: normal;
+        font-family: "League Spartan", sans-serif;
+        src:local("./fonts/LeagueSpartan-VariableFont_wght.ttf");
+      }
+  
+      .greenfont{
+        @include font-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
+        &__hover:hover{
+          @include font-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
+        }
+      }
+      .greyfont{
+        @include font-color(map-get($colors, Dark Grayish Cyan),nth($fallback-color,3));
+      }
+      .borderbottom{
+         border-bottom: 1px solid lightgray;
+         @media screen and(min-width: 768px){
+            border:none;
+         }
+      }
+      .lightgreenbg{
+        @include bg-color(map-get($colors,Light Grayish Cyan),nth($fallback-color,1));
+      }
+     
+      section,header{
+          @include padding(0.4em);
+          @include margin(1em 0);
+          .tabBgHover{
+            &:hover{
+              @include bg-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
+              color: white;
+            }
+          }
+          .newFont{
+            @include bg-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
+          }
+          .featuredFont{
+            @include bg-color(map-get($colors,Very Dark Grayish Cyan),nth($fallback-color,4));
+          }
+          
+          @media screen and(min-width:768px){
+              @include padding(1em);
+          }
+          
+      }
+      section{
+        padding: 1em;
+        min-height: 12em;
+        box-shadow: 15px 5px 5px hsl(180, 31%, 95%);
+        button{
+           border:none;
+        }
+        @include bg-color(lighten(map-get($colors,Light Grayish Cyan),4),nth($fallback-color,1));
+        
+          @media screen and(min-width:768px){
+            margin-left: 2em;
+            margin-right: 2em;
+          }
+      }
+      header{
+         margin:0;
+         padding:0;
+         min-height:5em;
+
+        @include bg-color(lighten(map-get($colors,Light Grayish Cyan),4),nth($fallback-color,1));
+      
+        button{
+           padding:0.2em;
+        }
+        .fa-square-xmark{
+            font-size:2.1em;
+            @extend .greenfont;
+            &:hover{
+              @include font-color(map-get($colors,Very Dark Grayish Cyan),nth($fallback-color,4));
+            }
+        }
+        .clearButton{
+          position:absolute;
+          right:1em;
+          &:hover{
+            text-decoration:underline;
+          }
+        }
+      
+         @media screen and(min-width:768px){
+           margin-left: 2em;
+           margin-right: 0.5em;
+           
+         }
+      }
+      .addFeaturedBorder{
+         border-left: 4px solid hsl(180, 29%, 50%);
+      }
+      footer {  
+        .attribution {
+          font-size: fnt.$font_size-8;
+          text-align: center;
+        }
+      }
+}
+
+  //taken from https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 0.0625em;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 0.0625em;
+}
