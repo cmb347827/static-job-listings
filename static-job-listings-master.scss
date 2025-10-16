@@ -11,7 +11,7 @@ $colors: (
   Desaturated Dark Cyan: hsl(180, 29%, 50%),
 );
 $fallback-color: (
-  PaleTurquoise,PaleTurquoise2, Crystal,PaleTurquoise4,DarkCyan
+  AliceBlue,Azure, LightSlateGray,MidnightBlue,DarkCyan
 );
 
 @mixin font-color($color, $fallback-color) {
@@ -35,6 +35,13 @@ $fallback-color: (
   padding: $args;
 }
 
+@font-face {
+    font-size: 0.9375em;
+    font-weight: normal;
+    font-family: "League Spartan", sans-serif;
+    src:local("./fonts/LeagueSpartan-VariableFont_wght.ttf");
+}
+  
 
 html{
   box-sizing: border-box; 
@@ -64,7 +71,7 @@ button,select {
     top: -2em;
     max-width:10%;
     max-height:10%;
-    @media screen and (min-width:768px){
+    @media screen and (min-width:48em){
       max-width: 30%;
       max-height: 30%;
       top:0;
@@ -84,13 +91,13 @@ button,select {
 }
 .mobile{
    display:block;
-   @media screen and(min-width:768px){
+   @media screen and(min-width:48em){
      display:none;
    }
 }
 .desktop{
   display:block;
-  @media screen and(max-width:767px){
+  @media screen and(max-width:48em){
     display:none;
   }
 }
@@ -100,7 +107,7 @@ button,select {
 }
  
 .rounded-pill{
-    border-radius: 15px;
+    border-radius: 0.9375em;
 }
 .text-white{
     color: white;
@@ -117,6 +124,12 @@ button,select {
      display:block;
      margin:0 auto;
 }
+%greenfont{
+        @include font-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
+        &__hover:hover{
+          @include font-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
+        }
+ }
 
 .outer{
       output{
@@ -125,41 +138,6 @@ button,select {
        main{
         min-height: 135em;
       }
-      
-      @include bg-color(lighten(map-get($colors,Light Grayish Cyan),2),nth($fallback-color,1));
-      @font-face {
-        font-family: "League Spartan]";
-        src: url("C:/Users/Melissa/Desktop/github/intermediate/static-job-listings-master/fonts/LeagueSpartan-VariableFont_wght.ttf");
-      } 
-      .banner{
-          height: fit-content;
-      }
-      @font-face {
-        font-size: 15px;
-        font-weight: normal;
-        font-family: "League Spartan", sans-serif;
-        src:local("./fonts/LeagueSpartan-VariableFont_wght.ttf");
-      }
-  
-      .greenfont{
-        @include font-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
-        &__hover:hover{
-          @include font-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
-        }
-      }
-      .greyfont{
-        @include font-color(map-get($colors, Dark Grayish Cyan),nth($fallback-color,3));
-      }
-      .borderbottom{
-         border-bottom: 1px solid lightgray;
-         @media screen and(min-width: 768px){
-            border:none;
-         }
-      }
-      .lightgreenbg{
-        @include bg-color(map-get($colors,Light Grayish Cyan),nth($fallback-color,1));
-      }
-     
       section,header{
           @include padding(0.4em);
           @include margin(1em 0);
@@ -176,7 +154,7 @@ button,select {
             @include bg-color(map-get($colors,Very Dark Grayish Cyan),nth($fallback-color,4));
           }
           
-          @media screen and(min-width:768px){
+          @media screen and(min-width:48em){
               @include padding(1em);
           }
           
@@ -184,16 +162,22 @@ button,select {
       section{
         padding: 1em;
         min-height: 12em;
-        box-shadow: 15px 5px 5px hsl(180, 31%, 95%);
+        box-shadow: 0.9375em 0.3125em 0.3125em hsl(180, 31%, 95%);
         button{
            border:none;
         }
         @include bg-color(lighten(map-get($colors,Light Grayish Cyan),4),nth($fallback-color,1));
         
-          @media screen and(min-width:768px){
+          @media screen and(min-width:48em){
             margin-left: 2em;
             margin-right: 2em;
           }
+      }
+       footer {  
+        .attribution {
+          font-size: fnt.$font_size-8;
+          text-align: center;
+        }
       }
       header{
          margin:0;
@@ -207,7 +191,7 @@ button,select {
         }
         .fa-square-xmark{
             font-size:2.1em;
-            @extend .greenfont;
+            @extend %greenfont;
             &:hover{
               @include font-color(map-get($colors,Very Dark Grayish Cyan),nth($fallback-color,4));
             }
@@ -220,20 +204,34 @@ button,select {
           }
         }
       
-         @media screen and(min-width:768px){
+         @media screen and(min-width:48em){
            margin-left: 2em;
            margin-right: 0.5em;
            
          }
       }
-      .addFeaturedBorder{
-         border-left: 4px solid hsl(180, 29%, 50%);
+      @include bg-color(lighten(map-get($colors,Light Grayish Cyan),2),nth($fallback-color,1));
+      
+      .banner{
+          height: fit-content;
       }
-      footer {  
-        .attribution {
-          font-size: fnt.$font_size-8;
-          text-align: center;
-        }
+      
+      .greyfont{
+        @include font-color(map-get($colors, Dark Grayish Cyan),nth($fallback-color,3));
+      }
+      .borderbottom{
+         border-bottom: 0.0625em solid lightgray;
+         @media screen and(min-width: 48em){
+            border:none;
+         }
+      }
+      .lightgreenbg{
+        @include bg-color(map-get($colors,Light Grayish Cyan),nth($fallback-color,1));
+      }
+     
+    
+      .addFeaturedBorder{
+         border-left: 0.25em solid hsl(180, 29%, 50%);
       }
 }
 

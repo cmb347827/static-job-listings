@@ -250,6 +250,12 @@
   }
 }
 
+@font-face {
+  font-size: 0.9375em;
+  font-weight: normal;
+  font-family: "League Spartan", sans-serif;
+  src: local("./fonts/LeagueSpartan-VariableFont_wght.ttf");
+}
 html {
   box-sizing: border-box;
 }
@@ -280,7 +286,7 @@ button, select {
   max-width: 10%;
   max-height: 10%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .svg-logo-outer {
     max-width: 30%;
     max-height: 30%;
@@ -306,7 +312,7 @@ button, select {
 .mobile {
   display: block;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .mobile {
     display: none;
   }
@@ -315,7 +321,7 @@ button, select {
 .desktop {
   display: block;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 48em) {
   .desktop {
     display: none;
   }
@@ -327,7 +333,7 @@ button, select {
 }
 
 .rounded-pill {
-  border-radius: 15px;
+  border-radius: 0.9375em;
 }
 
 .text-white {
@@ -348,8 +354,12 @@ button, select {
   margin: 0 auto;
 }
 
+.outer header .fa-square-xmark {
+  color: DarkCyan;
+  color: hsl(180deg, 29%, 50%);
+}
 .outer {
-  background-color: PaleTurquoise;
+  background-color: AliceBlue;
   background-color: #f7fdfd;
 }
 .outer output {
@@ -357,49 +367,6 @@ button, select {
 }
 .outer main {
   min-height: 135em;
-}
-@font-face {
-  .outer {
-    font-family: "League Spartan]";
-    src: url("C:/Users/Melissa/Desktop/github/intermediate/static-job-listings-master/fonts/LeagueSpartan-VariableFont_wght.ttf");
-  }
-}
-.outer .banner {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-@font-face {
-  .outer {
-    font-size: 15px;
-    font-weight: normal;
-    font-family: "League Spartan", sans-serif;
-    src: local("./fonts/LeagueSpartan-VariableFont_wght.ttf");
-  }
-}
-.outer .greenfont, .outer header .fa-square-xmark {
-  color: DarkCyan;
-  color: hsl(180deg, 29%, 50%);
-}
-.outer .greenfont__hover:hover {
-  color: DarkCyan;
-  color: hsl(180deg, 29%, 50%);
-}
-.outer .greyfont {
-  color: Crystal;
-  color: hsl(180deg, 8%, 52%);
-}
-.outer .borderbottom {
-  border-bottom: 1px solid lightgray;
-}
-@media screen and (min-width: 768px) {
-  .outer .borderbottom {
-    border: none;
-  }
-}
-.outer .lightgreenbg {
-  background-color: PaleTurquoise;
-  background-color: hsl(180deg, 52%, 96%);
 }
 .outer section, .outer header {
   padding: 0.4em;
@@ -415,10 +382,10 @@ button, select {
   background-color: hsl(180deg, 29%, 50%);
 }
 .outer section .featuredFont, .outer header .featuredFont {
-  background-color: PaleTurquoise4;
+  background-color: MidnightBlue;
   background-color: hsl(180deg, 14%, 20%);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .outer section, .outer header {
     padding: 1em;
   }
@@ -426,24 +393,28 @@ button, select {
 .outer section {
   padding: 1em;
   min-height: 12em;
-  box-shadow: 15px 5px 5px hsl(180deg, 31%, 95%);
-  background-color: PaleTurquoise;
+  box-shadow: 0.9375em 0.3125em 0.3125em hsl(180deg, 31%, 95%);
+  background-color: AliceBlue;
   background-color: white;
 }
 .outer section button {
   border: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .outer section {
     margin-left: 2em;
     margin-right: 2em;
   }
 }
+.outer footer .attribution {
+  font-size: 8px;
+  text-align: center;
+}
 .outer header {
   margin: 0;
   padding: 0;
   min-height: 5em;
-  background-color: PaleTurquoise;
+  background-color: AliceBlue;
   background-color: white;
 }
 .outer header button {
@@ -453,7 +424,7 @@ button, select {
   font-size: 2.1em;
 }
 .outer header .fa-square-xmark:hover {
-  color: PaleTurquoise4;
+  color: MidnightBlue;
   color: hsl(180deg, 14%, 20%);
 }
 .outer header .clearButton {
@@ -463,18 +434,35 @@ button, select {
 .outer header .clearButton:hover {
   text-decoration: underline;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .outer header {
     margin-left: 2em;
     margin-right: 0.5em;
   }
 }
-.outer .addFeaturedBorder {
-  border-left: 4px solid hsl(180deg, 29%, 50%);
+.outer .banner {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-.outer footer .attribution {
-  font-size: 8px;
-  text-align: center;
+.outer .greyfont {
+  color: LightSlateGray;
+  color: hsl(180deg, 8%, 52%);
+}
+.outer .borderbottom {
+  border-bottom: 0.0625em solid lightgray;
+}
+@media screen and (min-width: 48em) {
+  .outer .borderbottom {
+    border: none;
+  }
+}
+.outer .lightgreenbg {
+  background-color: AliceBlue;
+  background-color: hsl(180deg, 52%, 96%);
+}
+.outer .addFeaturedBorder {
+  border-left: 0.25em solid hsl(180deg, 29%, 50%);
 }
 
 .visually-hidden:not(:focus):not(:active) {
