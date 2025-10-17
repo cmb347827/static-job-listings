@@ -250,12 +250,6 @@
   }
 }
 
-@font-face {
-  font-size: 0.9375em;
-  font-weight: normal;
-  font-family: "LeagueSpartan", sans-serif;
-  src: local("./fonts/LeagueSpartan-VariableFont_wght.ttf");
-}
 html {
   box-sizing: border-box;
 }
@@ -359,6 +353,7 @@ button, select {
   color: hsl(180deg, 29%, 50%);
 }
 .outer {
+  font-family: "League Spartan", sans-serif;
   background-color: AliceBlue;
   background-color: #f7fdfd;
 }

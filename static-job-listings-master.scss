@@ -34,13 +34,6 @@ $fallback-color: (
 @mixin padding($args...) {
   padding: $args;
 }
-
-@font-face {
-    font-size: 0.9375em;
-    font-weight: normal;
-    font-family: "LeagueSpartan", sans-serif;
-    src:local("./fonts/LeagueSpartan-VariableFont_wght.ttf");
-}
   
 
 html{
@@ -132,6 +125,7 @@ button,select {
  }
 
 .outer{
+      font-family: "League Spartan", sans-serif;
       output{
          display:block;
       }

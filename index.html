@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/yxgKFKLM/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='static-job-listings-master.css' type='text/css'>
   
   <title>Frontend Mentor | Job Listings</title>
@@ -21,12 +23,12 @@
          </div>
         
         <header  title="Returned job listings" class='display-flex align-items-center visuallyhidden border'>
-             
+              <h1 class="visually-hidden">This page will display either filtered results , all job-listings or no results</h1>
               <div  class="filters display-flex wrap  align-items-center"></div>
         </header>
         
         <main>
-              <h1 class="visually-hidden">This page will display either filtered results , all job-listings or no results</h1>
+              <h2 class="visually-hidden">Applied filters from search results in header</h2>
               <div title='all job listings' class="js-job-listings">
                   <h2 class="visually-hidden">Job Listings</h2>
                   
@@ -35,7 +37,7 @@
               
               
               <div title='filtered results' class="js-results">
-                  <h2 class="visually-hidden">Filtered results</h2>
+                  <h3 class="visually-hidden">Filtered results</h3>
                   <span title="No results" id="no-results">
                     <!-- no results content -->
                     No results to show
