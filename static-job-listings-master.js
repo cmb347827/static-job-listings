@@ -278,7 +278,7 @@ function addListener(){
 
 //fetch  the initial data after loading is complete
 function fetchAsync(){
-	fetch("https://raw.githubusercontent.com/cmb347827/static-job-listings-master/refs/heads/main/data.json")
+	fetch("https://raw.githubusercontent.com/cmb347827/static-job-listings/refs/heads/main/data.json")
    .then((response) => response.json())
    .then((data) => {
       elements.data = data;
@@ -301,7 +301,7 @@ function fetchAsync(){
 }
 
 $(window).on('load',function(){
-	
+	//clearLocalStorage();
 	fetchAsync();
 	
 	$('#header').attr('aria-hidden','true');
