@@ -35,7 +35,19 @@ $fallback-color: (
   padding: $args;
 }
   
+//specificiy 0,0,0
+*
+ {
+  box-sizing: inherit;
+}
+.greenfont{
+        @include font-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
+        &__hover:hover{
+          @include font-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
+        }
+ }
 
+//specificity 0,0,1
 html{
   box-sizing: border-box; 
 }
@@ -46,13 +58,41 @@ img,svg {
 button,select {
     text-transform: none
 }
-
-*,
 ::before,
-::after {
+::after{
   box-sizing: inherit;
 }
+output{
+    display:block;
+}
+main{
+  min-height: 135em;
+}
+section,header{
+    @include padding(0.4em);
+    @include margin(1em 0);
+    @media screen and(min-width:48em){
+        @include padding(1em);
+    }
+    
+}
+section{
+      padding: 1em;
+      min-height: 12em;
+      box-shadow: 0.9375em 0.3125em 0.3125em hsl(180, 31%, 95%);
+      button{
+          border:none;
+      }
+      @include bg-color(lighten(map-get($colors,Light Grayish Cyan),4),nth($fallback-color,1));
+      
+      @media screen and(min-width:48em){
+        margin-left: 2em;
+        margin-right: 2em;
+      }
+ }
 
+
+//specificity 0,1,0
 .top-z-index{
   //needed for z-index.
   position: relative;
@@ -89,10 +129,10 @@ button,select {
    }
 }
 .desktop{
-  display:block;
-  @media screen and(max-width:48em){
-    display:none;
-  }
+    display:block;
+    @media screen and(max-width:48em){
+      display:none;
+    }
 }
 .filtersPosition{
     position:relative;
@@ -117,63 +157,49 @@ button,select {
      display:block;
      margin:0 auto;
 }
-%greenfont{
-        @include font-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
-        &__hover:hover{
-          @include font-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
-        }
- }
-
 .outer{
-      font-family: "League Spartan", sans-serif;
-      output{
-         display:block;
-      }
-       main{
-        min-height: 135em;
-      }
-      section,header{
-          @include padding(0.4em);
-          @include margin(1em 0);
-          .tabBgHover{
-            &:hover{
-              @include bg-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
-              color: white;
-            }
-          }
-          .newFont{
-            @include bg-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
-          }
-          .featuredFont{
-            @include bg-color(map-get($colors,Very Dark Grayish Cyan),nth($fallback-color,4));
-          }
-          
-          @media screen and(min-width:48em){
-              @include padding(1em);
-          }
-          
-      }
-      section{
-        padding: 1em;
-        min-height: 12em;
-        box-shadow: 0.9375em 0.3125em 0.3125em hsl(180, 31%, 95%);
-        button{
-           border:none;
-        }
-        @include bg-color(lighten(map-get($colors,Light Grayish Cyan),4),nth($fallback-color,1));
-        
-          @media screen and(min-width:48em){
-            margin-left: 2em;
-            margin-right: 2em;
-          }
-      }
-       footer {  
-        .attribution {
-          font-size: fnt.$font_size-8;
-          text-align: center;
-        }
-      }
-      header{
+    font-family: "League Spartan", sans-serif;
+    @include bg-color(lighten(map-get($colors,Light Grayish Cyan),2),nth($fallback-color,1));
+}
+.banner{
+    height: fit-content;
+}
+.greyfont{
+  @include font-color(map-get($colors, Dark Grayish Cyan),nth($fallback-color,3));
+}
+.borderbottom{
+    border-bottom: 0.0625em solid lightgray;
+    @media screen and(min-width: 48em){
+      border:none;
+    }
+}
+.lightgreenbg{
+  @include bg-color(map-get($colors,Light Grayish Cyan),nth($fallback-color,1));
+}
+.addFeaturedBorder{
+    border-left: 0.25em solid hsl(180, 29%, 50%);
+}
+.tabBgHover{
+    &:hover{
+      @include bg-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
+      color: white;
+    }
+}
+.newFont{
+  @include bg-color(map-get($colors, Desaturated Dark Cyan),nth($fallback-color,5));
+}
+.featuredFont{
+  @include bg-color(map-get($colors,Very Dark Grayish Cyan),nth($fallback-color,4));
+}
+.attribution {
+      font-size: fnt.$font_size-18;
+      text-align: center;
+}
+      
+     
+
+//spceicicity 0,0,2 to 0,1,1
+header{
          margin:0;
          padding:0;
          min-height:5em;
@@ -185,7 +211,7 @@ button,select {
         }
         .fa-square-xmark{
             font-size:2.1em;
-            @extend %greenfont;
+            @extend .greenfont;
             &:hover{
               @include font-color(map-get($colors,Very Dark Grayish Cyan),nth($fallback-color,4));
             }
@@ -203,31 +229,13 @@ button,select {
            margin-right: 0.5em;
            
          }
-      }
-      @include bg-color(lighten(map-get($colors,Light Grayish Cyan),2),nth($fallback-color,1));
-      
-      .banner{
-          height: fit-content;
-      }
-      
-      .greyfont{
-        @include font-color(map-get($colors, Dark Grayish Cyan),nth($fallback-color,3));
-      }
-      .borderbottom{
-         border-bottom: 0.0625em solid lightgray;
-         @media screen and(min-width: 48em){
-            border:none;
-         }
-      }
-      .lightgreenbg{
-        @include bg-color(map-get($colors,Light Grayish Cyan),nth($fallback-color,1));
-      }
-     
-    
-      .addFeaturedBorder{
-         border-left: 0.25em solid hsl(180, 29%, 50%);
-      }
+ }
+.attribution a {
+    color:black;
 }
+      
+      
+//specificty  0,3,0
 
   //taken from https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
 .visually-hidden:not(:focus):not(:active) {

@@ -250,6 +250,19 @@
   }
 }
 
+* {
+  box-sizing: inherit;
+}
+
+.greenfont, header .fa-square-xmark {
+  color: DarkCyan;
+  color: hsl(180deg, 29%, 50%);
+}
+.greenfont__hover:hover {
+  color: DarkCyan;
+  color: hsl(180deg, 29%, 50%);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -262,10 +275,44 @@ button, select {
   text-transform: none;
 }
 
-*,
 ::before,
 ::after {
   box-sizing: inherit;
+}
+
+output {
+  display: block;
+}
+
+main {
+  min-height: 135em;
+}
+
+section, header {
+  padding: 0.4em;
+  margin: 1em 0;
+}
+@media screen and (min-width: 48em) {
+  section, header {
+    padding: 1em;
+  }
+}
+
+section {
+  padding: 1em;
+  min-height: 12em;
+  box-shadow: 0.9375em 0.3125em 0.3125em hsl(180deg, 31%, 95%);
+  background-color: AliceBlue;
+  background-color: white;
+}
+section button {
+  border: none;
+}
+@media screen and (min-width: 48em) {
+  section {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
 }
 
 .top-z-index {
@@ -348,116 +395,95 @@ button, select {
   margin: 0 auto;
 }
 
-.outer header .fa-square-xmark {
-  color: DarkCyan;
-  color: hsl(180deg, 29%, 50%);
-}
 .outer {
   font-family: "League Spartan", sans-serif;
   background-color: AliceBlue;
   background-color: #f7fdfd;
 }
-.outer output {
-  display: block;
+
+.banner {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-.outer main {
-  min-height: 135em;
+
+.greyfont {
+  color: LightSlateGray;
+  color: hsl(180deg, 8%, 52%);
 }
-.outer section, .outer header {
-  padding: 0.4em;
-  margin: 1em 0;
+
+.borderbottom {
+  border-bottom: 0.0625em solid lightgray;
 }
-.outer section .tabBgHover:hover, .outer header .tabBgHover:hover {
+@media screen and (min-width: 48em) {
+  .borderbottom {
+    border: none;
+  }
+}
+
+.lightgreenbg {
+  background-color: AliceBlue;
+  background-color: hsl(180deg, 52%, 96%);
+}
+
+.addFeaturedBorder {
+  border-left: 0.25em solid hsl(180deg, 29%, 50%);
+}
+
+.tabBgHover:hover {
   background-color: DarkCyan;
   background-color: hsl(180deg, 29%, 50%);
   color: white;
 }
-.outer section .newFont, .outer header .newFont {
+
+.newFont {
   background-color: DarkCyan;
   background-color: hsl(180deg, 29%, 50%);
 }
-.outer section .featuredFont, .outer header .featuredFont {
+
+.featuredFont {
   background-color: MidnightBlue;
   background-color: hsl(180deg, 14%, 20%);
 }
-@media screen and (min-width: 48em) {
-  .outer section, .outer header {
-    padding: 1em;
-  }
-}
-.outer section {
-  padding: 1em;
-  min-height: 12em;
-  box-shadow: 0.9375em 0.3125em 0.3125em hsl(180deg, 31%, 95%);
-  background-color: AliceBlue;
-  background-color: white;
-}
-.outer section button {
-  border: none;
-}
-@media screen and (min-width: 48em) {
-  .outer section {
-    margin-left: 2em;
-    margin-right: 2em;
-  }
-}
-.outer footer .attribution {
-  font-size: 0.5em;
+
+.attribution {
+  font-size: 1.125em;
   text-align: center;
 }
-.outer header {
+
+header {
   margin: 0;
   padding: 0;
   min-height: 5em;
   background-color: AliceBlue;
   background-color: white;
 }
-.outer header button {
+header button {
   padding: 0.2em;
 }
-.outer header .fa-square-xmark {
+header .fa-square-xmark {
   font-size: 2.1em;
 }
-.outer header .fa-square-xmark:hover {
+header .fa-square-xmark:hover {
   color: MidnightBlue;
   color: hsl(180deg, 14%, 20%);
 }
-.outer header .clearButton {
+header .clearButton {
   position: absolute;
   right: 1em;
 }
-.outer header .clearButton:hover {
+header .clearButton:hover {
   text-decoration: underline;
 }
 @media screen and (min-width: 48em) {
-  .outer header {
+  header {
     margin-left: 2em;
     margin-right: 0.5em;
   }
 }
-.outer .banner {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.outer .greyfont {
-  color: LightSlateGray;
-  color: hsl(180deg, 8%, 52%);
-}
-.outer .borderbottom {
-  border-bottom: 0.0625em solid lightgray;
-}
-@media screen and (min-width: 48em) {
-  .outer .borderbottom {
-    border: none;
-  }
-}
-.outer .lightgreenbg {
-  background-color: AliceBlue;
-  background-color: hsl(180deg, 52%, 96%);
-}
-.outer .addFeaturedBorder {
-  border-left: 0.25em solid hsl(180deg, 29%, 50%);
+
+.attribution a {
+  color: black;
 }
 
 .visually-hidden:not(:focus):not(:active) {
