@@ -96,7 +96,8 @@ Users should be able to:
 - I had trouble getting the first paint to load at a good speed appearantly as ,initially, the frontendmentor project screenshot didn't look right with no loaded job listings. I asked for help , as to why this was happening, at Discord , they mentioned the use of Lighthouse and how it will identify problems with a site. 
 - I validated the html  at 'https://validator.w3.org/#validate_by_upload' on 10/27/25 and got 'Document checking completed. No errors or warnings to show.'
   I validated the css at 'https://jigsaw.w3.org/css-validator/validator.html.en#validate_by_upload' and got 'Congratulations! No Error Found. This document validates as CSS level 3 + SVG !'
-  Finally, I checked with Lighthouse and got ...
+  Finally, I checked with Lighthouse on 10/28/25  and got for mobile: 93 performance, 94 accessibility, 100 best practices, and 91 seo.
+  And for desktop: 94 performance, 94 accessibility, 100 best practices , and 91 seo.
 
   
  
