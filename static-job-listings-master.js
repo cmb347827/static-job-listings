@@ -125,28 +125,28 @@ const  addListings=(which)=>{
 						</div>
 						<div class='display-flex direction-column mobile-move-up'>
 								<div class='display-flex '>
-								    <p class='greenfont fw-semibold'>${item.company} </p>
-									<p class='${newFont} text-white rounded-pill p-03 '>${item.new ? 'NEW!' : ''} </p>
-									<p class='${featuredFont} text-white rounded-pill p-03'>${item.featured ? 'FEATURED' :''}</p>
+								    <p class='greenfont fw-semibold p-1'>${item.company} </p>
+									<p class='${newFont} text-white rounded-pill p-1 '>${item.new ? 'NEW!' : ''} </p>
+									<p class='${featuredFont} text-white rounded-pill p-1'>${item.featured ? 'FEATURED' :''}</p>
 								</div>
-								<div class='greenfont__hover fw-bold'>
+								<div class='greenfont__hover fw-bold p-1'>
 									${item.position}
 								</div>
 								<div class='display-flex greyfont  borderbottom'>
-									<div class='fw-medium me-2'>${item.postedAt}</div>
-									<div class='fw-medium me-2'>${item.contract}</div>
-									<div class='fw-medium'>${item.location}</div>
+									<div class='fw-medium me-2 p-1'>${item.postedAt}</div>
+									<div class='fw-medium me-2 p-1'>${item.contract}</div>
+									<div class='fw-medium p-1'>${item.location}</div>
 								</div>
 						</div>
 				</div>
-				<div  role="presentation" class='noborder display-flex align-self-md-center pt-2'>
-					<button  class="search-item lightgreenbg tabBgHover greenfont fw-bold ">${item.role}</button>
-					<button class="search-item lightgreenbg tabBgHover greenfont fw-bold ">${item.level}</button>
+				<div  role="presentation" class='noborder display-flex align-self-md-center pt-2 p-1'>
+					<button  class="search-item lightgreenbg tabBgHover greenfont fw-bold p-1">${item.role}</button>
+					<button class="search-item lightgreenbg tabBgHover greenfont fw-bold p-1">${item.level}</button>
 					<div class='display-flex'>${item.languages.map(elmt => `
-						<button class='search-item lightgreenbg tabBgHover greenfont fw-bold '>${elmt}</button>
+						<button class='search-item lightgreenbg tabBgHover greenfont fw-bold p-1'>${elmt}</button>
 					`).join('')}</div>
 					<div class='display-flex'>${item.tools.map(elmt => `
-						<button class='search-item lightgreenbg tabBgHover fw-bold greenfont '>${elmt}</button>
+						<button class='search-item lightgreenbg tabBgHover fw-bold greenfont p-1'>${elmt}</button>
 					`).join('')}</div>
 				</div>
 		    </section>

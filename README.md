@@ -94,6 +94,9 @@ Users should be able to:
 - I wanted to 'short circuit' `forEach()` in `filterData()`, as as soon as a term is found in a listing, that listing should be included and there's no need to continue to assess that listing. And found a stackoverflow post that explained the use of `some()` instead, which returns true as soon as any of the callbacks, executed in array order, return true, short-circuiting the execution of the rest (see link 4). But then, I realized it only will return the first result then, and that was still not what I had I mind. I did realize I could keep the rest of my `some()` code with the returns on true, and just switch back to `forEach()` for the elements array.
 - I also read up online about ensuring dynamically added HTML is accessible. 
 - I had trouble getting the first paint to load at a good speed appearantly as ,initially, the frontendmentor project screenshot didn't look right with no loaded job listings. I asked for help , as to why this was happening, at Discord , they mentioned the use of Lighthouse and how it will identify problems with a site. 
+- I validated the html  at 'https://validator.w3.org/#validate_by_upload' on 10/27/25 and got 'Document checking completed. No errors or warnings to show.'
+  I validated the css at 'https://jigsaw.w3.org/css-validator/validator.html.en#validate_by_upload' and got 'Congratulations! No Error Found. This document validates as CSS level 3 + SVG !'
+  Finally, I checked with Lighthouse and got ...
 
   
  
